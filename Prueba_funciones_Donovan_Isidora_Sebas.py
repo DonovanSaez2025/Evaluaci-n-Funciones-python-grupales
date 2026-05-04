@@ -1,4 +1,22 @@
 import os
+"""1. Crear una función que reciba una lista de números enteros y genere una nueva lista solo con los números pares mayores a 10.
+Luego debe mostrar la nueva lista y la cantidad de elementos encontrados. """
+#Código Isidora
+def numerosParesMayores(listado):
+    paresMayor10 = []
+    for i in range(0, len(listado)):
+        if listado[i] % 2 == 0 and listado[i] > 10:
+            paresMayor10.append(str(listado[i]))
+    print(f"Números pares mayores a 10: {", ".join(paresMayor10)}")
+
+def ejercicio1():
+    limit = int(input("Ingresa un límite de números: "))
+    listado = []
+    for i in range(0, limit):
+        num = int(input("Ingresa un número entero: "))
+        listado.append(num)
+    numerosParesMayores(listado)
+
 '''3. Crear una función que reciba una lista de edades y
 clasifique a las personas en tres grupos: menores de edad, adultos y adultos mayores (60+). 
 Debe mostrar la cantidad de personas en cada grupo.'''
@@ -60,9 +78,14 @@ def limpiarConsola():
 Continue = True
 while Continue:
     print("\n--- Ejercicios grupo 6 ---")
+    print("--- Ejercicio 1: Isidora Valenzuela ---")
     print("--- Ejercicio 3: Donovan Sáez ---")
     opcion = input("Selecciona un ejercicio (1-3): ")
-    if opcion == "3":
+    if opcion == "1":
+        limpiarConsola()
+        print("Ejecutando ejercicio 2...")
+        ejercicio1()
+    elif opcion == "3":
         limpiarConsola()
         print("Ejecutando ejercicio 3...")
         ejercicio3()
