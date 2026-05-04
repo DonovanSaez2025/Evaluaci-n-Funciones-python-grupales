@@ -17,6 +17,37 @@ def ejercicio1():
         listado.append(num)
     numerosParesMayores(listado)
 
+
+'''Crear una función que reciba una lista de notas (decimales) y genere dos listas: 
+una con aprobados (≥ 4.0) y otra con reprobados (< 4.0).
+Debe mostrar ambas listas y la cantidad de estudiantes en cada grupo.'''
+#Código Sebastián
+def revisarNotas(lista):
+    aprobados = []
+    reprobados = []
+    for i in range(0, len(lista)):
+        if lista[i] < 4.0:
+            reprobados.append(str(lista[i]))
+        else:
+            aprobados.append(str(lista[i]))
+    print(f"\nalumnos reprobados: {len(reprobados)}\nnotas: {" - ".join(reprobados)}")
+    print(f"alumnos aprobados: {len(aprobados)}\nnotas: {" - ".join(aprobados)}")
+
+def ejercicio2():
+    limite = int(input("Ingrese un limite de notas: "))
+    listaNotas = []
+    i = 0
+    while i < limite:
+        nota = float(input("Ingrese la nota de un estudiante: "))
+        if nota < 1.0 or nota > 7.0:
+            print("Nota inválida")
+        else: 
+            print("Nota agregada con éxito")
+            listaNotas.append(nota)
+            i += 1
+    revisarNotas(listaNotas) # va a agarra la listaNotas
+
+
 '''3. Crear una función que reciba una lista de edades y
 clasifique a las personas en tres grupos: menores de edad, adultos y adultos mayores (60+). 
 Debe mostrar la cantidad de personas en cada grupo.'''
@@ -33,21 +64,18 @@ def clasificarEdades(listaEdades):
             adultos += 1
         else:
             adultosMayores += 1
-    #Imprimir menores de edad
     if menoresEdad == 0:
         print("Menores de edad: no se han detectado menores de edad.")
     elif menoresEdad == 1:
         print(f"Menores de edad: {menoresEdad} detectado.")
     else:
         print(f"Menores de edad: {menoresEdad} detectados. ")
-    #Imprimir adultos
     if adultos == 0:
         print("Adultos: no se han detectado adultos.")
     elif adultos == 1:
         print(f"Adultos: {adultos} detectado.")
     else:
         print(f"Adultos: {adultos} detectados. ")
-    #Imprimir adultos mayores
     if adultosMayores == 0:
         print("Adultos mayores: no se han detectado adultos mayores.")
     elif adultosMayores == 1:
@@ -78,17 +106,22 @@ def limpiarConsola():
 while True:
     print("\n--- Ejercicios grupo 6 ---")
     print("--- Ejercicio 1: Isidora Valenzuela ---")
+    print("--- Ejercicio 2: Sebastián Bustamante ---")
     print("--- Ejercicio 3: Donovan Sáez ---")
-    opcion = input("Selecciona un ejercicio (1-3): ")
-    if opcion == "1":
+    opcion = int(input("Selecciona un ejercicio (1-3): "))
+    if opcion == 1:
+        limpiarConsola()
+        print("Ejecutando ejercicio 1...")
+        ejercicio1()
+    elif opcion == 2:
         limpiarConsola()
         print("Ejecutando ejercicio 2...")
-        ejercicio1()
-    elif opcion == "3":
+        ejercicio2()
+    elif opcion == 3:
         limpiarConsola()
         print("Ejecutando ejercicio 3...")
         ejercicio3()
-    elif opcion == "0":
+    elif opcion == 0:
         print("Saliendo...")
         break
     else:
