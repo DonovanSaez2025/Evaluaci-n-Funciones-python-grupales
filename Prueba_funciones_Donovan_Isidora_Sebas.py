@@ -36,7 +36,6 @@ def clasificarEdades(listaEdades):
         print(f"Adultos mayores: {adultosMayores} detectado.")
     else:
         print(f"Adultos mayores: {adultosMayores} detectados. ")
-    
 
 def ejercicio3():
     limite = int(input("Ingresa un límite de valores: "))
@@ -52,8 +51,21 @@ def ejercicio3():
             i+=1
     clasificarEdades(listaEdades)
 
+
+# Limpiar consola
+def limpiarConsola():
+    os.system('cls')
+
 #Menu while
 Continue = True
 while Continue:
     print("\n--- Ejercicios grupo 6 ---")
-    print("--- Donovan ---")
+    print("--- Ejercicio 3: Donovan Sáez ---")
+    opcion = input("Selecciona un ejercicio (1-3): ")
+    if opcion == "3":
+        limpiarConsola()
+        print("Ejecutando ejercicio 3...")
+        ejercicio3()
+    elif opcion == "0":
+        print("Saliendo...")
+        Continue = False
