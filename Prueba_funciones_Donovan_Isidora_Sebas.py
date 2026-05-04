@@ -75,8 +75,7 @@ def limpiarConsola():
     os.system('cls')
 
 #Menu while
-Continue = True
-while Continue:
+while True:
     print("\n--- Ejercicios grupo 6 ---")
     print("--- Ejercicio 1: Isidora Valenzuela ---")
     print("--- Ejercicio 3: Donovan Sáez ---")
@@ -91,4 +90,6 @@ while Continue:
         ejercicio3()
     elif opcion == "0":
         print("Saliendo...")
-        Continue = False
+        break
+    else:
+        print("Opción inválida.")
