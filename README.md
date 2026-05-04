@@ -1,2 +1,0 @@
-# Evaluación Funciones python grupales
-
